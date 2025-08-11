@@ -1,10 +1,10 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-import joblib  # or pickle
+import pickle  # or pickle
 from typing import List
 
 # Load your trained ML model
-model = joblib.load("disease_model.pkl")
+model = pickle.load("disease_model.pkl")
 
 # List of symptoms (can come from a file or database)
 SYMPTOMS = [
@@ -21,12 +21,10 @@ class SymptomsRequest(BaseModel):
 
 @app.get("/symptoms")
 def get_symptoms():
-    """Return the list of symptoms for dropdown."""
     return {"symptoms": SYMPTOMS}
 
 @app.post("/predict")
 def predict_disease(data: SymptomsRequest):
-    """Predict disease based on symptoms."""
     selected = data.symptoms
 
     # Validate: at least 4 symptoms

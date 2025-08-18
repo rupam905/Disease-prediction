@@ -1,49 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Healthyfy - Login</title>
+  <title>Heaven Health - Signup</title>
   <link rel="stylesheet" href="create_acc.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <div class="background-layer">
-    
+
     <!-- Map background -->
     <div class="background-map"></div>
 
     <!-- Top Logo -->
     <header>
-      <div class="logo">Healthy<span>fy</span></div>
+      <div class="logo">Heaven<span>Health</span></div>
     </header>
 
     <!-- LOGIN BOX START -->
-    <div class="login-box">
+    <form class="login-box" id="signup-form" method="post" action="/signup">
+
       <div class="input-group">
-        <input type="text" id="username" placeholder="Username" />
-      </div>
-      
-      <div class="input-group">
-        <input type="password" id="password" placeholder="Password" />
+        <input type="text" name="name" id="name" placeholder="Full Name" required/>
       </div>
 
-      <!-- ✅ New Input: Age -->
       <div class="input-group">
-        <input type="number" id="age" placeholder="Age" />
+        <input type="email" name="email" id="email" placeholder="Email" required/>
       </div>
 
-      <!-- ✅ New Input: Gender -->
       <div class="input-group">
-        <input type="text" id="gender" placeholder="Gender" />
+        <input type="password" name="password" id="password" placeholder="Password" required/>
       </div>
 
-      <button class="btn create-btn">Create account</button>
-      <p class="or-text">OR</p>
-      <button class="btn login-btn">Login</button>
-    </div>
+      <button type="submit" class="btn login-btn">Create Account</button>
+    </form>
     <!-- LOGIN BOX END -->
 
   </div>
+  <script src="signup.js"></script>
 </body>
+
 </html>

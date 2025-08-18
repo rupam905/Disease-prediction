@@ -1,11 +1,12 @@
-# "fever", "cough", "sore throat", "headache", "chills", "muscle pain"
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-import pickle  # or pickle
+import pickle 
 from typing import List
 from sklearn.preprocessing import LabelEncoder
 import numpy as np
 import pandas as pd
+import signin, signup
+from fastapi.middleware.cors import CORSMiddleware
 
 # Load your trained ML model
 model = pickle.load(open("models/randomforest.pkl", "+rb"))
@@ -22,6 +23,9 @@ le.fit(train_df['prognosis'])
 
 # FastAPI app
 app = FastAPI()
+
+app.include_router(signup.router)
+app.include_router(signin.router)
 
 
 # Request body model

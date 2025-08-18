@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Healthyfy - Login</title>
+  <title>Heaven Health - Login</title>
   <link rel="stylesheet" href="login.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -15,23 +15,26 @@
 
     <!-- Top Logo -->
     <header>
-      <div class="logo">Healthy<span>fy</span></div>
+      <div class="logo">Heaven<span>Health</span></div>
     </header>
 
   <!-- LOGIN BOX START -->
-<div class="login-box">
+<form class="login-box" id="login-form" method="post" action="/login">
   <div class="input-group">
-    <input type="text" id="username" placeholder="Username" />
+    <input type="email" id="email" placeholder="Email" required/>
   </div>
   <div class="input-group">
-    <input type="password" id="password" placeholder="Password" />
+    <input type="password" id="password" placeholder="Password" required/>
   </div>
-  <button class="btn login-btn">Login</button>
+  <button type="submit" class="btn login-btn">Login</button>
   <p class="or-text">OR</p>
-  <button class="btn create-btn">Create account</button>
-</div>
+  
+  <a href="create_acc.html" class="btn create-btn">Create account</a>
+  
+</form>
 <!-- LOGIN BOX END -->
 
   </div>
+  <script src="login.js"></script>
 </body>
 </html>

@@ -6,7 +6,7 @@ from sklearn.preprocessing import LabelEncoder
 import numpy as np
 import pandas as pd
 import signin, signup
-from fastapi.middleware.cors import CORSMiddleware
+from middleware import setup_cors
 
 # Load your trained ML model
 model = pickle.load(open("models/randomforest.pkl", "+rb"))
@@ -27,6 +27,7 @@ app = FastAPI()
 app.include_router(signup.router)
 app.include_router(signin.router)
 
+setup_cors(app)
 
 # Request body model
 class SymptomsRequest(BaseModel):

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heaven Health - Signup</title>
+  <link rel="stylesheet" href="create_acc.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="background-layer">
+
+    <!-- Map background -->
+    <div class="background-map"></div>
+
+    <!-- Top Logo -->
+    <header>
+      <div class="logo">Heaven<span>Health</span></div>
+    </header>
+
+    <!-- LOGIN BOX START -->
+    <form class="login-box" id="signup-form" method="post" action="/signup">
+
+      <div class="input-group">
+        <input type="text" name="name" id="name" placeholder="Full Name" required/>
+      </div>
+
+      <div class="input-group">
+        <input type="email" name="email" id="email" placeholder="Email" required/>
+      </div>
+
+      <div class="input-group">
+        <input type="password" name="password" id="password" placeholder="Password" required/>
+      </div>
+
+      <button type="submit" class="btn login-btn">Create Account</button>
+    </form>
+    <!-- LOGIN BOX END -->
+
+  </div>
+  <script src="signup.js"></script>
+</body>
+
+</html>
